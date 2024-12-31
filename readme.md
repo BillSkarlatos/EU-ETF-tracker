@@ -7,7 +7,7 @@ This project aims to predict the potential price gain or loss of Exchange Traded
 
 ## Mathematical Model
 
-### 2. **Machine Learning Model**
+### 1. **Data Preparation**
 For each ETF, the following features are calculated:
 - **Close**: The daily closing price of the ETF.
 - **SMA (Simple Moving Average)**:
@@ -31,6 +31,7 @@ For each ETF, the following features are calculated:
   \text{Return} = \frac{P_t - P_{t-1}}{P_{t-1}}
   ```
 
+---
 
 ### 2. **Machine Learning Model**
 - **Target Variable**:

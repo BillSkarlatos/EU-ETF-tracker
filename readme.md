@@ -8,9 +8,7 @@ This project aims to predict the potential price gain or loss of Exchange Traded
 ## Mathematical Model
 
 ### 1. **Data Preparation**
-
 For each ETF, the following features are calculated:
-
 - **Close**: The daily closing price of the ETF.
 - **SMA (Simple Moving Average)**:
   ```math
@@ -19,12 +17,6 @@ For each ETF, the following features are calculated:
   ```
 
   Where $P_{i}$ represents the closing price at day $i$.
-
-- **Target Variable**:
-  The percentage change in price over the next 20 trading days:
-  ```math
-  \text{Target} = \frac{P_{t+20} - P_t}{P_t}
-  ```
 
 - **Volatility**: 
   The standard deviation of closing prices over a 10-day window:

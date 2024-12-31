@@ -49,7 +49,7 @@ For each ETF, the following features are calculated:
 1. Clone the repository.
 2. Install dependencies:
    ```bash
-   pip install -r requirements.txt
+   pip install -r dependencies.txt
    ```
 3. Run the main script:
    ```bash

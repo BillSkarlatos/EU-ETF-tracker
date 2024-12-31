@@ -16,7 +16,7 @@ For each ETF, the following features are calculated:
   ```math
   \text{SMA}_{10} = \frac{1}{10} \sum_{i=1}^{10} P_{i}
   \text{SMA}_{30} = \frac{1}{30} \sum_{i=1}^{30} P_{i}
-  ```
+  
   Where $P_{i}$ represents the closing price at day $i$.
 
 - **Volatility**: 

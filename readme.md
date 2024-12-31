@@ -16,8 +16,15 @@ For each ETF, the following features are calculated:
   ```math
   \text{SMA}_{10} = \frac{1}{10} \sum_{i=1}^{10} P_{i}
   \text{SMA}_{30} = \frac{1}{30} \sum_{i=1}^{30} P_{i}
-  
+  ```
+
   Where $P_{i}$ represents the closing price at day $i$.
+
+- **Target Variable**:
+  The percentage change in price over the next 20 trading days:
+  ```math
+  \text{Target} = \frac{P_{t+20} - P_t}{P_t}
+  ```
 
 - **Volatility**: 
   The standard deviation of closing prices over a 10-day window:

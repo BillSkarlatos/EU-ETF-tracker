@@ -8,21 +8,26 @@ This project aims to predict the potential price gain or loss of Exchange Traded
 ## Mathematical Model
 
 ### 1. **Data Preparation**
+
 For each ETF, the following features are calculated:
+
 - **Close**: The daily closing price of the ETF.
 - **SMA (Simple Moving Average)**:
-  - \( \text{SMA}_{10} = \frac{1}{10} \sum_{i=1}^{10} P_{i} \)
-  - \( \text{SMA}_{30} = \frac{1}{30} \sum_{i=1}^{30} P_{i} \)
-  Where \( P_{i} \) represents the closing price at day \( i \).
+  - $$\( \text{SMA}_{10} = \frac{1}{10} \sum_{i=1}^{10} P_{i} \)$$
+  - $$\( \text{SMA}_{30} = \frac{1}{30} \sum_{i=1}^{30} P_{i} \)$$
+  Where $P_{i}$ represents the closing price at day $i$.
+
 - **Volatility**: The standard deviation of closing prices over a 10-day window:
-  \[
+  $$\[
   \text{Volatility} = \sqrt{\frac{1}{10} \sum_{i=1}^{10} (P_i - \mu)^2}
-  \]
-  Where \( \mu \) is the mean closing price over the 10-day window.
+  \]$$
+  Where $\mu$ is the mean closing price over the 10-day window.
+
 - **Return**: The daily percentage change in price:
-  \[
+  $$\[
   \text{Return} = \frac{P_t - P_{t-1}}{P_{t-1}}
-  \]
+  \]$$
+
 
 ### 2. **Machine Learning Model**
 - **Target Variable**:

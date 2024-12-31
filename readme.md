@@ -16,15 +16,15 @@ For each ETF, the following features are calculated:
   \text{SMA}_{10} = \frac{1}{10} \sum_{i=1}^{10} P_{i}
   ```
   - SMA_30: 
-  ```math
-  \text{SMA}_{30} = \frac{1}{30} \sum_{i=1}^{30} P_{i}
-  ```
+    ```math
+    \text{SMA}_{30} = \frac{1}{30} \sum_{i=1}^{30} P_{i}
+    ```
   Where $P_{i}$ represents the closing price at day $i$.
 - **Volatility**: The standard deviation of closing prices over a 10-day window:
   ```math
   \text{Volatility} = \sqrt{\frac{1}{10} \sum_{i=1}^{10} (P_i - \mu)^2}
   ```
-  Where \( \mu \) is the mean closing price over the 10-day window.
+  Where $\mu$ is the mean closing price over the 10-day window.
 - **Return**: The daily percentage change in price:
   ```math
   \text{Return} = \frac{P_t - P_{t-1}}{P_{t-1}}

@@ -5,23 +5,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.metrics import mean_squared_error
 import matplotlib.pyplot as plt
-
-def get_top_etfs_by_volume(region="Europe", num_etfs=20):
-    # Predefined list of popular ETFs for Europe
-    return [
-        "IWDA.AS", "EQQQ.AS", "SPY5.DE", "XMRV.DE", "XDWD.DE", "IS3N.DE", "EXXT.DE", "XD9U.DE", 
-        "XLYE.DE", "SPYD.L", "VEUR.DE", "VGVE.DE", "IWMO.DE", "SXR8.DE", "XDJP.DE", "EUNL.DE", 
-        "XRS2.DE", "IUSA.L", "VWRL.L", "UB43.L"
-    ]
-
-# Automatically fetch ETF tickers
-def fetch_etf_tickers():
-    try:
-        tickers = get_top_etfs_by_volume()
-        return tickers
-    except Exception as e:
-        print(f"Error fetching tickers: {e}")
-        return []
+from ETF_Fetching import *
 
 # Fetch ETFs dynamically
 etf_tickers = fetch_etf_tickers()
@@ -47,7 +31,7 @@ processed_data = {}
 valid_tickers = []
 for ticker in etf_tickers:
     try:
-        data = yf.Ticker(ticker).history(period="5y")  # Use last 5 years of data
+        data = yf.Ticker(ticker).history(period="1y")  # Use last 5 years of data
         if not data.empty:
             processed_data[ticker] = prepare_dataset(data)
             valid_tickers.append(ticker)

@@ -11,9 +11,15 @@ This project aims to predict the potential price gain or loss of Exchange Traded
 For each ETF, the following features are calculated:
 - **Close**: The daily closing price of the ETF.
 - **SMA (Simple Moving Average)**:
-  - SMA_10: $\text{SMA}_{10} = \frac{1}{10} \sum_{i=1}^{10} P_{i}$
-  - SMA_30: $\text{SMA}_{30} = \frac{1}{30} \sum_{i=1}^{30} P_{i}$
-  Where \( P_{i} \) represents the closing price at day \( i \).
+  - SMA_10: 
+  ```math
+  \text{SMA}_{10} = \frac{1}{10} \sum_{i=1}^{10} P_{i}
+  ```
+  - SMA_30: 
+  ```math
+  \text{SMA}_{30} = \frac{1}{30} \sum_{i=1}^{30} P_{i}
+  ```
+  Where $P_{i}$ represents the closing price at day $i$.
 - **Volatility**: The standard deviation of closing prices over a 10-day window:
   ```math
   \text{Volatility} = \sqrt{\frac{1}{10} \sum_{i=1}^{10} (P_i - \mu)^2}

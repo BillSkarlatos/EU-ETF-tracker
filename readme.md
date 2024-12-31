@@ -11,36 +11,38 @@ This project aims to predict the potential price gain or loss of Exchange Traded
 For each ETF, the following features are calculated:
 - **Close**: The daily closing price of the ETF.
 - **SMA (Simple Moving Average)**:
-  - SMA_10: \( \text{SMA}_{10} = \frac{1}{10} \sum_{i=1}^{10} P_{i} \)
-  - SMA_30: \( \text{SMA}_{30} = \frac{1}{30} \sum_{i=1}^{30} P_{i} \)
+  - SMA_10: $\text{SMA}_{10} = \frac{1}{10} \sum_{i=1}^{10} P_{i}$
+  - SMA_30: $\text{SMA}_{30} = \frac{1}{30} \sum_{i=1}^{30} P_{i}$
   Where \( P_{i} \) represents the closing price at day \( i \).
 - **Volatility**: The standard deviation of closing prices over a 10-day window:
-  \[
+  ```math
   \text{Volatility} = \sqrt{\frac{1}{10} \sum_{i=1}^{10} (P_i - \mu)^2}
-  \]
+  ```
   Where \( \mu \) is the mean closing price over the 10-day window.
 - **Return**: The daily percentage change in price:
-  \[
+  ```math
   \text{Return} = \frac{P_t - P_{t-1}}{P_{t-1}}
-  \]
+  ```
 
 ### 2. **Machine Learning Model**
 - **Target Variable**:
   The percentage change in price over the next 20 trading days:
-  \[
+  ```math
   \text{Target} = \frac{P_{t+20} - P_t}{P_t}
-  \]
+  ```
 - **Feature Set**:
-  \[ \{\text{Close}, \text{SMA}_{10}, \text{SMA}_{30}, \text{Volatility}\} \]
+  ```math
+   \{\text{Close}, \text{SMA}_{10}, \text{SMA}_{30}, \text{Volatility}\}
+   ```
 - **Model**:
   - A Random Forest Regressor is trained on the feature set to predict the target variable.
   - Mean Squared Error (MSE) is used to evaluate model performance.
 
 ### 3. **Prediction and Visualization**
 - Predicted Price:
-  \[
+  ```math
   \text{Predicted Price} = P_t \times (1 + \text{Predicted Change})
-  \]
+  ```
 - Visualization compares the actual historical prices and the predicted prices for the top-gaining ETF.
 
 ---

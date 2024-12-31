@@ -18,9 +18,9 @@ For each ETF, the following features are calculated:
   Where $P_{i}$ represents the closing price at day $i$.
 
 - **Volatility**: The standard deviation of closing prices over a 10-day window:
-  $$\[
+  $\[
   \text{Volatility} = \sqrt{\frac{1}{10} \sum_{i=1}^{10} (P_i - \mu)^2}
-  \]$$
+  \]$
   Where $\mu$ is the mean closing price over the 10-day window.
 
 - **Return**: The daily percentage change in price:
